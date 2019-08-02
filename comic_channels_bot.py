@@ -87,7 +87,7 @@ def send_url_updates(url):
         return
 
     # Send comic title
-    if content["text"][0] == updates["text"][0]:
+    if content["text"][0] == updates["text"][0] and len(content["text"]) > 1:
         title_message = "[{}](http://{})".format(updates["text"][0], url)
         bot.sendMessage(
             chat_id=channel,
